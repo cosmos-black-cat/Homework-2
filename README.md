@@ -8,11 +8,11 @@ Provide your profitable path, the amountIn, amountOut value for each swap, and y
 
 > Solution  
 path: tokenB-> tokenA-> tokenE-> tokenD-> tokenC-> tokenB  
-swap1 (tokenB: 5                 ether, tokenA: 5.666666666666667 ether)  
-swap2 (tokenA: 5.666666666666667 ether, tokenE: 1.0625            ether)  
-swap3 (tokenE: 1.0625            ether, tokenD: 2.44604316547     ether)  
-swap4 (tokenD: 2.44604316547     ether, tokenC: 5.0796812749      ether)  
-swap5 (tokenC: 5.0796812749      ether, tokenB: 20.1404124616     ether)  
+swap1 (tokenB: 5 &emsp;&emsp;&emsp;&emsp;ether, tokenA: 5.666666666666667 ether)  
+swap2 (tokenA: 5.666666666666667 ether, tokenE: 1.0625&emsp;&emsp;&emsp;ether)  
+swap3 (tokenE: 1.0625&emsp;&emsp;&emsp;ether, tokenD: 2.44604316547 &emsp;ether)  
+swap4 (tokenD: 2.44604316547 &emsp;ether, tokenC: 5.0796812749 &emsp; ether)  
+swap5 (tokenC: 5.0796812749 &emsp; ether, tokenB: 20.1404124616 &emsp;ether)  
 tokenB balance: 20.1404124616 ether
 
 ### Problem 2
