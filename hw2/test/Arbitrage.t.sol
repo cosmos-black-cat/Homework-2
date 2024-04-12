@@ -133,7 +133,7 @@ contract Arbitrage is Test {
             arbitrager,
             block.timestamp
         );
-        // CB
+        // CBss
         tokenC.approve(address(router), tokenC.balanceOf(arbitrager));
         address[] memory pathCB = new address[](2);
         pathCB[0] = address(tokenC);
