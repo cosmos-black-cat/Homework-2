@@ -79,7 +79,7 @@ contract Arbitrage is Test {
         /**
          * Please add your solution below
          */
-        // BAaaaa
+        // BA
         address[] memory pathBA = new address[](2);
         pathBA[0] = address(tokenB);
         pathBA[1] = address(tokenA);
@@ -90,27 +90,15 @@ contract Arbitrage is Test {
             arbitrager, 
             block.timestamp
         );
-        // AE
+        // AD
         tokenA.approve(address(router), tokenA.balanceOf(arbitrager));
-        address[] memory pathAE = new address[](2);
-        pathAE[0] = address(tokenA);
-        pathAE[1] = address(tokenE);
+        address[] memory pathAD = new address[](2);
+        pathAD[0] = address(tokenA);
+        pathAD[1] = address(tokenD);
         router.swapExactTokensForTokens(
             tokenA.balanceOf(arbitrager), 
             0,
-            pathAE,
-            arbitrager, 
-            block.timestamp
-        );
-        // ED
-        tokenE.approve(address(router), tokenE.balanceOf(arbitrager));
-        address[] memory pathED = new address[](2);
-        pathED[0] = address(tokenE);
-        pathED[1] = address(tokenD);
-        router.swapExactTokensForTokens(
-            tokenE.balanceOf(arbitrager), 
-            0,
-            pathED,
+            pathAD,
             arbitrager, 
             block.timestamp
         );

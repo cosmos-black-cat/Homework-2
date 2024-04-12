@@ -7,13 +7,12 @@ Please complete the report problem below:
 Provide your profitable path, the amountIn, amountOut value for each swap, and your final reward (your tokenB balance).
 
 > Solution  
-path: tokenB->tokenA->tokenE->tokenD->tokenC->tokenB  
-swap1 (tokenB: *5* ether, tokenA: *5.666666666666667* ether)  
-swap2 (tokenA: *5.666666666666667* ether, tokenE: *1.0625* ether)  
-swap3 (tokenE: *1.0625* ether, tokenD: *2.44604316547* ether)  
-swap4 (tokenD: *2.44604316547* ether, tokenC: *5.0796812749* ether)  
-swap5 (tokenC: *5.0796812749* ether, tokenB: *20.1404124616* ether)  
-tokenB balance: *20.1404124616* ether
+path: tokenB->tokenA->tokenD->tokenC->tokenB  
+swap1 (tokenB: *5.00000000000* ether, tokenA: *5.65532198866* ether)  
+swap2 (tokenA: *5.65532198866* ether, tokenD: *2.45878131710* ether)  
+swap3 (tokenD: *2.45878131710* ether, tokenC: *5.08892729331* ether)  
+swap4 (tokenC: *5.08892729331* ether, tokenB: *20.1298889441* ether)  
+tokenB balance: *20.1298889441* ether
 
 ### Problem 2
 What is slippage in AMM, and how does Uniswap V2 address this issue? Please illustrate with a function as an example.
