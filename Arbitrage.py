@@ -11,11 +11,9 @@ liquidity = {
     ("tokenD", "tokenE"): (60, 25), # 60d = 25e  e = 12d/5 = 12/5*5/2*9 b
 }
 
-# A function to calculate the rate for a given (x, y) pair
 def calculate_rate(amount, x_liquidity, y_liquidity):
     return y_liquidity - (y_liquidity * x_liquidity / (x_liquidity + amount))
 
-# Helper function to calculate the direct exchange from tokenX to tokenY
 def direct_exchange(tokenX, tokenY, amount):
     if (tokenX, tokenY) in liquidity:
         x_liquidity, y_liquidity = liquidity[(tokenX, tokenY)]
@@ -26,7 +24,6 @@ def direct_exchange(tokenX, tokenY, amount):
     else:
         return 0  # No direct pair exists
 
-# Function to check arbitrage for a cycle
 def check_arbitrage_cycle(cycle, amount):
     initial_amount = amount
     for i in range(len(cycle) - 1):
@@ -34,7 +31,6 @@ def check_arbitrage_cycle(cycle, amount):
         amount = direct_exchange(tokenX, tokenY, amount)
     return amount
 
-# Find and print arbitrage opportunities
 def find_arbitrage_opportunities():
     tokens = ["tokenA", "tokenC", "tokenD", "tokenE"]
     tokenB = "tokenB"
@@ -49,12 +45,10 @@ def find_arbitrage_opportunities():
                     if fourth_token in [first_token, second_token, third_token]: continue
                     cycle = [tokenB, first_token, second_token, third_token, fourth_token, tokenB]
                     tmp = check_arbitrage_cycle(cycle, 5)
-                    #if tmp >= 15:
-                     #   print(f"path: {cycle}, profit: {tmp}")
                     if tmp > best_profit:
                         best_profit = tmp
                         best_cycle = cycle
     if best_profit >= 20:
-        print(f"path: {best_cycle}, tokenB balance: {best_profit}")
-
+        path_str = '->'.join(best_cycle)
+        print(f"path: {path_str}, tokenB balance= {best_profit}")
 find_arbitrage_opportunities()
