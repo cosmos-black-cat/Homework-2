@@ -76,69 +76,62 @@ contract Arbitrage is Test {
         uint256 tokensBefore = tokenB.balanceOf(arbitrager);
         console.log("Before Arbitrage tokenB Balance: %s", tokensBefore);
         tokenB.approve(address(router), 5 ether);
-
         /**
          * Please add your solution below
          */
-        
-        
         // BA
         address[] memory pathBA = new address[](2);
         pathBA[0] = address(tokenB);
         pathBA[1] = address(tokenA);
-        uint256[] memory amountsBA = router.swapExactTokensForTokens(
+        router.swapExactTokensForTokens(
             5 ether, 
             0,
             pathBA,
             arbitrager, 
-            //address(this),
             block.timestamp
         );
-        
         // AE
         tokenA.approve(address(router), tokenA.balanceOf(arbitrager));
         address[] memory pathAE = new address[](2);
         pathAE[0] = address(tokenA);
         pathAE[1] = address(tokenE);
-        uint256[] memory amountsAE = router.swapExactTokensForTokens(
+        router.swapExactTokensForTokens(
             tokenA.balanceOf(arbitrager), 
             0,
             pathAE,
             arbitrager, 
             block.timestamp
         );
-
         // ED
         tokenE.approve(address(router), tokenE.balanceOf(arbitrager));
         address[] memory pathED = new address[](2);
         pathED[0] = address(tokenE);
         pathED[1] = address(tokenD);
-        uint256[] memory amountsED = router.swapExactTokensForTokens(
+        router.swapExactTokensForTokens(
             tokenE.balanceOf(arbitrager), 
             0,
             pathED,
             arbitrager, 
             block.timestamp
         );
-        
-        // DC...Cccxsdfhoj
+        // DC
         tokenD.approve(address(router), tokenD.balanceOf(arbitrager));
         address[] memory pathDC = new address[](2);
         pathDC[0] = address(tokenD);
         pathDC[1] = address(tokenC);
-        uint256[] memory amountsDC = router.swapExactTokensForTokens(
+        router.swapExactTokensForTokens(
             tokenD.balanceOf(arbitrager), 
             0,
             pathDC,
             arbitrager,
             block.timestamp
         );
-        // CBss
+        // CB
         tokenC.approve(address(router), tokenC.balanceOf(arbitrager));
         address[] memory pathCB = new address[](2);
         pathCB[0] = address(tokenC);
         pathCB[1] = address(tokenB);
-        uint256[] memory amountsCB = router.swapExactTokensForTokens(
+        router.swapExactTokensForTokens(
             tokenC.balanceOf(arbitrager), 
             0,
             pathCB,
@@ -148,13 +141,6 @@ contract Arbitrage is Test {
         /**
          * Please add your solution above
          */
-
-        /*
-        //testing part
-        uint256 tokensAfter = tokenA.balanceOf(arbitrager);
-        assertGt(tokensAfter, 0 ether);
-        // */
-
         uint256 tokensAfter = tokenB.balanceOf(arbitrager);
         assertGt(tokensAfter, 20 ether);
         console.log("After Arbitrage tokenB Balance: %s", tokensAfter);

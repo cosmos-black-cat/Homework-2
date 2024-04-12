@@ -49,10 +49,12 @@ def find_arbitrage_opportunities():
                     if fourth_token in [first_token, second_token, third_token]: continue
                     cycle = [tokenB, first_token, second_token, third_token, fourth_token, tokenB]
                     tmp = check_arbitrage_cycle(cycle, 5)
+                    #if tmp >= 15:
+                     #   print(f"path: {cycle}, profit: {tmp}")
                     if tmp > best_profit:
                         best_profit = tmp
                         best_cycle = cycle
     if best_profit >= 20:
-        print(f"path: {best_cycle}, profit: {best_profit}")
+        print(f"path: {best_cycle}, tokenB balance: {best_profit}")
 
 find_arbitrage_opportunities()
